@@ -1,0 +1,43 @@
+version: '2'
+services:
+
+  # The Application
+  app:
+    build:
+      context: ./
+      dockerfile: app.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./application/:/var/www
+    environment:
+      - "DB_PORT=3306"
+      - "host=localhost"
+
+  # The Web Server
+  web:
+    build:
+      context: ./
+      dockerfile: web.dockerfile
+    working_dir: /var/www
+    volumes_from:
+      - app
+    links:
+      - app
+    ports:
+      - 8091:80
+
+  # The Database
+  database:
+    image: mysql:5.7
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - "MYSQL_DATABASE=laravel"
+      - "MYSQL_USER=laravel"
+      - "MYSQL_PASSWORD=laravel"
+      - "MYSQL_ROOT_PASSWORD=secret"
+    ports:
+        - "33062:3306"
+
+volumes:
+  db:
