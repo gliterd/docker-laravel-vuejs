@@ -1,0 +1,72 @@
+{
+    "name": "jcc/blog",
+    "description": "A full-featured, easy-to-use, well-expanded blog system powered by laravel and vuejs.",
+    "keywords": ["blog", "laravel", "vue"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.0.0",
+        "fideloper/proxy": "~3.3",
+        "dflydev/apache-mime-types": "^1.0",
+        "erusev/parsedown": "^1.6",
+        "intervention/image": "^2.3",
+        "jcc/laravel-vote": "dev-master",
+        "jellybool/flysystem-upyun": "dev-master",
+        "jellybool/translug": "~2.0",
+        "laravel/framework": "5.5.*",
+        "laravel/passport": "^2.0",
+        "laravel/socialite": "^3.0",
+        "laravel/tinker": "~1.0",
+        "league/fractal": "^0.14.0",
+        "league/html-to-markdown": "^4.2",
+        "predis/predis": "^1.1",
+        "yzalis/identicon": "^1.1"
+    },
+    "require-dev": {
+        "filp/whoops": "~2.0",
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+            ]
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
