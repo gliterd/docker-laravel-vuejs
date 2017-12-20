@@ -18,7 +18,7 @@ This is the only complete & powerful blog + forum application built with Laravel
 
 `Laravel 5.*` and `Vuejs 2.*` combined with the establishment of a good response and handy admin-panel. The admin-panel made through the `Vuejs` component development. The complete setup is workable within minutes with `docker compose 2`
 
-Here is the complete [Document](https://manual.pigjian.com/) & [Demo](http://example.pigjian.com)
+Here is the complete [Document](https://manual.pigjian.com/) & [Live Demo](http://example.pigjian.com)
 
 ## Basic Features
 
