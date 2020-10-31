@@ -53,7 +53,7 @@ Here is the complete [Document](https://manual.pigjian.com/) & [Live Demo](http:
 ### 1. Clone the source code or create new project.
 
 ```shell
-git clone https://github.com/literd/docker-laravel-vuejs.git
+git clone https://github.com/gliterd/docker-laravel-vuejs.git
 ```
 
 ### 2. Set the basic config
